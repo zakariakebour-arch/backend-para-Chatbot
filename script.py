@@ -37,7 +37,7 @@ def chat():
                 "X-Title": "Chat de Zakaria"
             },
             json={
-                "model": "gpt-4o-mini:free",
+                "model": "tngtech/deepseek-r1t2-chimera:free",
                 "messages": mensaje_entero
             }
         )
