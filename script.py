@@ -37,7 +37,7 @@ def chat():
                 "X-Title": "Chat de Zakaria"
             },
             json={
-                "model": "gpt-4.1",
+                "model": "gpt-4o-mini:free",
                 "messages": mensaje_entero
             }
         )
