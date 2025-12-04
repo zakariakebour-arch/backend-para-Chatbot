@@ -37,7 +37,7 @@ def chat():
                 "X-Title": "Chat de Zakaria"
             },
             json={
-                "model": "amazon/nova-2-lite-v1:free",
+                "model": "gpt-4.1",
                 "messages": mensaje_entero
             }
         )
