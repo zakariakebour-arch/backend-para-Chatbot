@@ -21,7 +21,7 @@ def chat():
             "X-Title": "Chat de Zakaria"
         },
         json={
-            "model": "deepseek/deepseek-chat:free",
+            "model": "amazon/nova-2-lite-v1:free",
             "messages": messages
         }
     )
