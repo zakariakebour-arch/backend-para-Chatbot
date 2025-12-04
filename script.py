@@ -3,7 +3,8 @@ from flask_cors import CORS
 import requests
 
 app = Flask(__name__)
-CORS(app)
+
+CORS(app, resources={r"/chat": {"origins": "https://zakariakebour-arch.github.io"}})
 
 OPENROUTER_KEY = "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"
 
@@ -36,7 +37,7 @@ def chat():
                 "X-Title": "Chat de Zakaria"
             },
             json={
-                "model": "amazon/nova-2-lite-v1:free",  
+                "model": "amazon/nova-2-lite-v1:free",
                 "messages": mensaje_entero
             }
         )
