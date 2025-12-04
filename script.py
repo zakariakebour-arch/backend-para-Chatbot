@@ -6,7 +6,7 @@ app = Flask(__name__)
 
 CORS(app, resources={r"/chat": {"origins": "https://zakariakebour-arch.github.io"}})
 
-OPENROUTER_KEY = "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"
+OPENROUTER_KEY = "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"
 
 @app.route("/chat", methods=["POST"])
 def chat():
