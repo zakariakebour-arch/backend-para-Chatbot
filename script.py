@@ -1,12 +1,12 @@
 from flask import Flask, request, jsonify
 from flask_cors import CORS
 import requests
+import os
 
 app = Flask(__name__)
-
 CORS(app, resources={r"/chat": {"origins": "https://zakariakebour-arch.github.io"}})
 
-OPENROUTER_KEY = "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"
+OPENROUTER_KEY = os.getenv("OPENROUTER_KEY")
 
 @app.route("/chat", methods=["POST"])
 def chat():
