@@ -5,7 +5,7 @@ import os
 
 app = Flask(__name__)
 CORS(app, resources={r"/chat": {"origins": "https://zakariakebour-arch.github.io"}})
-prompt_forzado = os.getenv("prompt_forzado")
+sistema_prompt = os.getenv("prompt_forzado")
 OPENROUTER_KEY = os.getenv("OPENROUTER_KEY")
 
 @app.route("/chat", methods=["POST"])
@@ -13,7 +13,11 @@ def chat():
     data = request.json
     messages = data.get("messages", [])
 
-    
+    prompt_forzado = {
+        "role": "system",
+        "content": sistema_prompt
+    }
+
     mensaje_entero = [prompt_forzado] + messages
 
     try:
