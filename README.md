@@ -1,1 +1,2 @@
 # backend-para-Chatbot
+Este servidor fue creado para ser una API que reciba mensaje desde el fronted de mi portafolio y que responda en tiempo real a esa pregunta, he usado python(flask) para montarlo y tiene una ruta /chat que recibe y manda informacion, esta desplegado en render,por eso hay que crear el archivo de requermientos y guiocorn, las variables de la API key y el prompt estan integrados en render para que no esten disponibles publicamente,con variables env,pero con la libreria os podemos acceder a ellos.
