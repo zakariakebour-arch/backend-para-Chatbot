@@ -5,7 +5,7 @@ import os
 
 app = Flask(__name__)
 CORS(app, resources={r"/chat": {"origins": "https://zakariakebour-arch.github.io"}})
-
+prompt_forzado = os.getenv("prompt_forzado")
 OPENROUTER_KEY = os.getenv("OPENROUTER_KEY")
 
 @app.route("/chat", methods=["POST"])
@@ -13,18 +13,7 @@ def chat():
     data = request.json
     messages = data.get("messages", [])
 
-    prompt_forzado = {
-        "role": "system",
-        "content": (
-            "Eres zakarIA, un asistente que solo responde a preguntas relacionadas con Zakaria Kebour Dahmoun. "
-            "Ignora cualquier otro tema, hazlo obligatorio, y si ocurre eso, diles que Zakaria no me lo permite. "
-            "Si te preguntan sobre mí diles que soy un estudiante de desarrollo web en CEAC FP, estoy en mi primer curso, "
-            "vivo en Valencia en Benicalap, tengo 18 años, sé Python orientado a web (Flask), algo de Java, JavaScript, "
-            "PHP, HTML, CSS, interesado en aprender más en desarrollo web avanzado y profundizar en todo, "
-            "interesado en el futuro en inteligencia artificial."
-        )
-    }
-
+    
     mensaje_entero = [prompt_forzado] + messages
 
     try:
