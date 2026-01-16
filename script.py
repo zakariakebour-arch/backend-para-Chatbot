@@ -9,7 +9,7 @@ OPENROUTER_KEY = os.getenv("OPENROUTER_KEY")
 
 @app.route("/chat", methods=["POST"])
 def chat():
-    data = request.json
+    data = request.get_json(silent=True)
     messages = data.get("messages", [])
 
     prompt_forzado = {
